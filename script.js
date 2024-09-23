@@ -266,12 +266,14 @@ function backToResult() {
 
 
 
-// جلب جميع الفيديوهات في الصفحة
-const videos = document.querySelectorAll("video");
+document.addEventListener("DOMContentLoaded", function() {
+    // جلب جميع الفيديوهات في الصفحة
+    const videos = document.querySelectorAll("video");
 
-// التأكد من أن كل فيديو صامت ويعمل تلقائيًا
-videos.forEach(video => {
-    video.muted = true; // التأكد من أن الفيديو صامت
-    video.play(); // تشغيل الفيديو تلقائيًا
+    // التأكد من أن كل فيديو صامت ويعمل تلقائيًا
+    videos.forEach(video => {
+        video.muted = true; // التأكد من أن الفيديو صامت
+        video.play(); // تشغيل الفيديو تلقائيًا
+    });
 });
 
