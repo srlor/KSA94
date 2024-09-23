@@ -1,3 +1,9 @@
+
+    window.onload = function() {
+        var video = document.getElementById('myVideo');
+        video.playbackRate = 1.5; // قم بتغيير القيمة لزيادة السرعة
+    };
+
 document.addEventListener("DOMContentLoaded", function() {
     const btn = document.querySelector("#showParticipants");
     const participantList = document.querySelector("#participantList");
@@ -256,6 +262,8 @@ function backToResult() {
     reviewSection.classList.add('hidden');
     resultSection.classList.remove('hidden');
 }
+
+
 
 
 
