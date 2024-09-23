@@ -1,0 +1,817 @@
+/* CSS الأساسي */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    direction: rtl;
+    text-align: center;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.popup {
+    display: none; /* البداية مخفية */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    position: relative;
+    width: 80%; /* زيادة العرض ليتناسب مع الفيديو */
+    max-width: 800px; /* حد أقصى للعرض */
+    margin: auto; /* لتوسيع النافذة */
+    background-color: black; /* خلفية داكنة لتناسب الفيديو */
+    border-radius: 10px; /* زوايا دائرية */
+    overflow: hidden; /* لإخفاء أي جزء زائد */
+    transform: scale(0); /* بداية الحجم */
+    animation: pop 0.5s forwards; /* إضافة الحركة */
+}
+
+video {
+    width: 100%; /* ملء العرض بالكامل */
+    height: auto; /* الحفاظ على نسبة الأبعاد */
+}
+
+/* يمكنك إضافة أنماط أخرى هنا */
+
+
+
+@keyframes pop {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.popup img {
+    width: 100%; /* ستظل الصورة تتناسب مع عرض النافذة */
+    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+    object-fit: cover; /* تغطية الصورة مع الحفاظ على النسبة */
+    border-radius: 8px; /* الزوايا المدورة فقط */
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* رأس الموقع */
+header {
+    background: rgba(0, 0, 0, 0.5); /* خلفية شبه شفافة للتباين */
+    padding: 40px; /* زيادة المسافة الداخلية */
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);    
+    border-radius: 15px; /* تغيير الزوايا */
+    margin-bottom: 30px; /* زيادة المسافة السفلية */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5); /* ظل أعمق */
+    position: relative; /* جعل الرأس ذو موضع نسبي */
+    overflow: hidden; /* إخفاء الأجزاء الزائدة من الفيديو */
+}
+
+.header-container {
+    position: relative; /* جعل الحاوية ذات موضع نسبي */
+    z-index: 1; /* رفع ترتيب الظهور */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 700px; /* زيادة العرض الأقصى */
+    margin-bottom: 30px; /* زيادة المسافة السفلية */
+    flex-wrap: wrap; /* السماح بالتفاف العناصر */
+}
+
+.logos img {
+    width: 160px; /* زيادة حجم الصورة */
+    height: 160px; /* زيادة حجم الصورة */
+    margin: 15px; /* تقليل المسافة بين الشعارات */
+    border-radius: 50%; /* جعل الصور دائرية */
+    background-color: white;
+    padding: 10px; /* تقليل المسافة بين الصورة وحدود الدائرة */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* ظل أعمق */
+    transition: transform 0.3s;
+}
+
+.logos img:hover {
+    transform: scale(1.1); /* تكبير عند التمرير */
+}
+
+h1 {
+    font-size: 3rem; /* زيادة حجم الخط */
+    margin-top: 10px;
+    text-align: center; /* محاذاة النص للوسط */
+    transition: color 0.3s; /* تأثير الانتقال على اللون */
+}
+
+h1:hover {
+    color: #1abc9c; /* تغيير لون النص عند التمرير */
+}
+
+.header-description {
+    font-size: 1.3rem; /* زيادة حجم الخط */
+    margin-top: 10px;
+    font-style: italic;
+    text-align: center; /* محاذاة النص للوسط */
+}
+
+.background-video {
+    position: absolute; /* جعل الفيديو بموقع مطلق */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* الحفاظ على تناسق الفيديو مع الشاشة */
+    z-index: 0; /* وضع الفيديو خلف المحتوى */
+}
+
+/* استعلامات الوسائط */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem; /* تقليل حجم الخط في الشاشات الصغيرة */
+    }
+    .header-description {
+        font-size: 1.2rem; /* تقليل حجم الخط في الشاشات الصغيرة */
+    }
+    .logos img {
+        width: 120px; /* تقليل حجم الصورة في الشاشات الصغيرة */
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem; /* تقليل حجم الخط في الشاشات الأصغر */
+    }
+    .header-description {
+        font-size: 1rem; /* تقليل حجم الخط في الشاشات الأصغر */
+    }
+    .logos img {
+        width: 100px; /* تقليل حجم الصورة في الشاشات الأصغر */
+        height: 100px;
+    }
+}
+
+
+
+/* معرض الإعلانات المتحركة */
+.carousel {
+    overflow: hidden;
+    width: 100%;
+    padding: 20px;
+    background: transparent;
+}
+
+.carousel-container {
+    display: flex;
+    animation: move 15s linear infinite; /* حركة مستمرة */
+}
+
+.carousel-container img {
+    width: 555px; /* عرض الصور بمقدار 30 بكسل */
+    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    margin-right: 30px; /* إضافة فجوة بين الصور */
+}
+
+@keyframes move {
+    0% { transform: translateX(100%); }  /* البداية من اليمين */
+    100% { transform: translateX(-calc(330px * 4 + 90px)); } /* النهاية إلى اليسار */
+}
+
+
+/* تحسين قسم الرؤية 2030 بألوان اليوم الوطني */
+.vision {
+    padding: 50px;
+    background-color: #F5F5F5;
+    margin-top: 50px;
+    border-radius: 25px;
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.vision-logo {
+    margin-bottom: 30px;
+}
+
+.vision-logo img {
+    width: 160px;
+    height: auto;
+}
+
+.vision h2 {
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    color: #006C35;
+    font-weight: bold;
+}
+
+.vision-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.vision-box {
+    width: 22%;
+    background-color: #ffffff;
+    color: #2c3e50;
+    border-radius: 15px;
+    padding: 0;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.vision-box img {
+    width: 100%;
+    height: 160px;
+    border-radius: 15px 15px 0 0;
+    margin: 0;
+    box-shadow: 0px 6px 12px rgba(0, 108, 53, 0.2);
+}
+
+.vision-box h3 {
+    font-size: 1.8rem;
+    margin: 20px 15px 10px 15px;
+    font-weight: bold;
+    color: #006C35;
+}
+
+.vision-box p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 15px 20px 15px;
+    color: #7f8c8d;
+}
+
+.vision-box button {
+    display: inline-block;
+    background-color: #006C35;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background-color 0.3s, transform 0.3s;
+    align-self: center;
+    margin-bottom: 20px;
+}
+
+.vision-box button:hover {
+    background-color: #004f26;
+    transform: translateY(-5px);
+}
+
+.vision-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 12px 24px rgba(0, 108, 53, 0.3);
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* مخفي بشكل افتراضي */
+    position: fixed; 
+    z-index: 1000; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.7); /* خلفية داكنة مع شفافية */
+}
+
+.modal-content {
+    background-color: #ffffff; /* لون الخلفية */
+    margin: 15% auto; /* مركز الصفحة */
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5); /* ظل للصندوق */
+    width: 80%; /* عرض الصندوق */
+    max-width: 600px; /* عرض أقصى */
+    text-align: right; /* محاذاة النصوص إلى اليمين */
+}
+
+.modal-title {
+    color: #006C35; /* لون العنوان الرئيسي */
+    margin-bottom: 10px;
+    font-size: 1.8rem; /* حجم خط العنوان */
+}
+
+.modal-subtitle {
+    color: #1ABC9C; /* لون العنوان الثانوي */
+    margin: 15px 0; 
+    font-size: 1.5rem; /* حجم خط العنوان الثانوي */
+}
+
+.modal-text {
+    margin: 10px 0; /* فراغ بين النصوص */
+    font-size: 1rem; /* حجم خط النص */
+    color: #333; /* لون النص */
+    font-weight: bold; /* جعل النص سميك */
+}
+
+.close {
+    color: #aaa; /* لون زر الإغلاق */
+    float: right; /* محاذاة الزر إلى اليمين */
+    font-size: 28px; 
+    font-weight: bold; 
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* لون زر الإغلاق عند التمرير */
+    text-decoration: none; 
+    cursor: pointer; 
+}
+
+/* تأثير خروج مميز */
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+
+/* استعلامات إعلامية لتصميم متجاوب */
+@media (max-width: 1200px) {
+    .vision-box {
+        width: 30%; /* تقليل العرض للشاشات المتوسطة */
+    }
+}
+
+@media (max-width: 768px) {
+    .vision-box {
+        width: 45%; /* تقليل العرض للشاشات الصغيرة */
+    }
+}
+
+@media (max-width: 576px) {
+    .vision-box {
+        width: 90%; /* عرض كامل تقريبًا للشاشات الصغيرة جدًا مثل الهواتف */
+        margin: 0 auto; /* تمركز العناصر */
+    }
+
+    .vision h2 {
+        font-size: 2rem; /* تقليل حجم النص الرئيسي للشاشات الصغيرة */
+    }
+
+    .vision-box h3 {
+        font-size: 1.6rem; /* تقليل حجم عنوان البوكس */
+    }
+}
+
+
+
+.video {
+    position: relative; /* لتموضع الصندوق فوق الفيديو */
+    margin: 50px 0; /* مسافة أعلى وأسفل الفيديو */
+    text-align: center; /* محاذاة النصوص للوسط */
+}
+
+.video-title-box {
+    position: absolute;
+    top: 10%; /* تموضع العنوان أعلى الفيديو */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px; /* مساحة داخلية أكبر */
+    background-color: rgba(255, 255, 255, 0.9); /* خلفية بيضاء شفافة */
+    border-radius: 20px; /* زوايا مدورة أكثر لجمال إضافي */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* ظل أكبر لإبراز العنوان */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* تأثير عند التمرير */
+}
+
+.video-title-box:hover {
+    transform: translateX(-50%) scale(1.08); /* تكبير أكبر عند التمرير */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* ظل أعمق عند التمرير */
+}
+
+.video-title {
+    font-size: 2.5rem; /* حجم خط أكبر لجعل العنوان أكثر وضوحًا */
+    color: #2c3e50; /* لون أزرق داكن جميل */
+    font-weight: bold;
+    margin: 0;
+}
+
+.video video {
+    width: 100%;
+    max-width: 900px; /* أقصى عرض للفيديو */
+    height: auto;
+    border-radius: 15px; /* زوايا مدورة للفيديو */
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3); /* ظل للفيديو لجمالية إضافية */
+}
+
+/* تصميم مرن للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .video-title {
+        font-size: 2rem; /* حجم أصغر للنص في الشاشات الصغيرة */
+    }
+
+    .video-title-box {
+        padding: 10px 20px; /* تقليل المساحة الداخلية على الشاشات الصغيرة */
+        top: 15%; /* زيادة المسافة العلوية على الشاشات الصغيرة */
+    }
+
+    .video video {
+        max-width: 90%; /* عرض أصغر للفيديو على الشاشات الصغيرة */
+    }
+}
+
+/* تصميم مرن للشاشات الكبيرة */
+@media (min-width: 1100px) {
+    .video-title {
+        font-size: 3rem; /* تكبير النص على الشاشات الكبيرة */
+    }
+
+    .video-title-box {
+        padding: 20px 40px; /* مساحة داخلية أكبر للشاشات الكبيرة */
+        top: 8%; /* وضع العنوان أقرب للفيديو */
+    }
+}
+
+
+/* قسم المشاركين كتذييل مع خلفية و ظلال */
+footer.participants {
+    margin-top: 60px; /* زيادة المسافة */
+    text-align: center; /* محاذاة النص في الوسط */
+    padding: 20px; /* إضافة مسافة داخلية */
+    background-color: transparent; /* خلفية شفافة */
+    position: relative; /* لتثبيت العنصر بشكل مناسب */
+    bottom: 0; /* تثبيت في الأسفل */
+    width: 100%; /* تملأ عرض الصفحة */
+}
+
+/* خلفية بيضاء أسفل الأزرار مع الظلال */
+.participants .btn-container {
+    background-color: white; /* خلفية بيضاء */
+    padding: 20px; /* مسافة حول الأزرار */
+    border-radius: 15px; /* زوايا مدورة */
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1); /* ظل أعلى الخلفية */
+    display: inline-block; /* للحفاظ على احتواء الأزرار */
+}
+
+/* باقي التنسيقات كما هي */
+.btn {
+    background-color: #27ae60; /* لون أخضر */
+    color: white; /* لون النص أبيض */
+    padding: 1rem 2rem; /* زيادة المساحة */
+    border: none; /* إزالة الحدود */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* إضافة تأثير حركة */
+    margin: 10px; /* تقليل المسافة بين الأزرار */
+    font-size: 1rem; /* حجم النص */
+}
+
+.btn:hover {
+    background-color: #219150; /* لون الزر عند التمرير */
+    transform: scale(1.05); /* تكبير الزر عند التمرير */
+}
+
+/* إخفاء القائمة */
+.hidden {
+    display: none;
+}
+
+/* صندوق المشاركين */
+.participant-box {
+    display: inline-block;
+    padding: 1rem 2rem; /* زيادة المساحة */
+    margin: 20px; /* زيادة المسافة */
+    border-radius: 20px; /* زوايا مدورة */
+    background-color: #007A33; /* لون موحد أخضر */
+    transition: transform 0.3s, box-shadow 0.3s; /* تأثير الحركة والظل */
+}
+
+/* تنسيق مميز لأسماء المشاركين */
+.participant-box p {
+    font-size: 1.2rem; /* حجم النص أكبر */
+    font-weight: bold; /* جعل النص عريض */
+    color: white; /* لون النص أبيض */
+}
+
+.participant-box:hover {
+    transform: translateY(-10px); /* تأثير حركة عند التمرير */
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.5); /* تأثير ظل مشع عند التمرير */
+}
+
+/* تنسيق مميز لفقرة مشاركة من ثالث ثانوي */
+.class-name {
+    font-size: 1rem; /* حجم النص المناسب */
+    font-weight: bold; /* جعل النص عريض */
+    color: rgba(255, 255, 255, 0.8); /* لون أبيض شفاف */
+    margin-top: 20px; /* مسافة أعلى */
+    padding: 10px 15px; /* زيادة المساحة داخل المربع */
+    border-radius: 10px; /* زوايا مدورة */
+    background-color: rgba(0, 122, 51, 0.6); /* خلفية خضراء شفافة متناسقة */
+    display: inline-block; /* جعل المربع متناسب مع المحتوى */
+}
+
+/* استجابة التصميم */
+@media (max-width: 768px) {
+    .btn {
+        padding: 0.8rem 1.5rem; /* تقليل حجم الأزرار */
+        font-size: 0.9rem; /* تقليل حجم النص */
+    }
+
+    .participant-box {
+        padding: 1rem; /* تقليل المساحة في صناديق المشاركين */
+    }
+
+    .participant-box p {
+        font-size: 1rem; /* تقليل حجم النص */
+    }
+
+    .class-name {
+        font-size: 0.9rem; /* تقليل حجم النص */
+    }
+}
+
+@media (max-width: 480px) {
+    .btn {
+        padding: 0.5rem 1rem; /* تقليل حجم الأزرار أكثر */
+        font-size: 0.8rem; /* تقليل حجم النص أكثر */
+    }
+
+    .participant-box {
+        padding: 0.8rem; /* تقليل المساحة في صناديق المشاركين */
+    }
+
+    .participant-box p {
+        font-size: 0.9rem; /* تقليل حجم النص */
+    }
+
+    .class-name {
+        font-size: 0.8rem; /* تقليل حجم النص */
+    }
+}
+
+
+
+
+/* لجعل الموقع متجاوبًا مع جميع الأجهزة */
+@media (max-width: 768px) {
+    .logos img {
+        width: 130px;
+        height: 130px;
+    }
+
+    h1 {
+        font-size: 2.5rem; /* تقليل الحجم */
+    }
+
+    .carousel-container img {
+        height: 130px; /* تقليل الارتفاع */
+    }
+
+    .vision-box {
+        width: 45%; /* تغيير العرض */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem; /* تقليل الحجم */
+    }
+
+    .vision-box {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#quiz-container {
+    background-color: #4caf50; /* لون أخضر فاتح */
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.btn-container {
+    margin: 20px 0;
+}
+
+.btn {
+    background-color: white;
+    color: #4caf50; /* لون أخضر */
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #e0e0e0; /* لون رمادي فاتح عند التمرير */
+    transform: translateY(-2px);
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.navigation-buttons button {
+    margin: 0 10px; /* المسافة بين الأزرار */
+}
+
+#results {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+}
+
+.quiz-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.hidden {
+    display: none;
+}
+
+h1, h2 {
+    color: #4CAF50;
+    margin-bottom: 25px; /* مسافة بين العنوان والأسئلة */
+}
+
+.question-box {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 25px; /* مسافة بين الأسئلة */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.question-text {
+    font-size: 20px;
+    margin-bottom: 10px; /* مسافة بين النص */
+}
+
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    justify-content: center;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.navigation {
+    margin-top: 20px;
+}
+
+#score {
+    font-size: 24px;
+}
+
+.result-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.icon-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%; /* دائرة متناسقة */
+    font-size: 24px;
+    cursor: pointer;
+    width: 50px; /* عرض ثابت */
+    height: 50px; /* ارتفاع ثابت */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-btn:hover {
+    background-color: #45a049;
+}
+
+#review-list {
+    text-align: left;
+}
+
+.correct {
+    color: green;
+}
+
+.wrong {
+    color: red;
+}
+
+@media (max-width: 600px) {
+    .quiz-container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .icon-btn {
+        font-size: 18px;
+        padding: 8px;
+    }
+}
