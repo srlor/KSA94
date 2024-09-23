@@ -469,6 +469,8 @@ h1:hover {
     }
 }
 
+
+
 /* قسم المشاركين كتذييل مع خلفية و ظلال */
 footer.participants {
     margin-top: 60px;
@@ -580,79 +582,6 @@ footer.participants {
         width: 90%;
         font-size: 0.85rem; /* حجم مناسب للشاشات الصغيرة */
         padding: 8px 12px; /* توسيع الهوامش قليلاً */
-    }
-    }
-
-/* جعل التصميم متجاوب مع الشاشات الصغيرة */
-@media (max-width: 768px) {
-    .participant-box {
-        width: 80%;
-        margin: 10px 0;
-    }
-
-    .btn {
-        width: 90%;
-        font-size: 1.2rem;
-    }
-
-    .participants .btn-container {
-        padding: 10px;
-    }
-}
-
-/* جعل التصميم متجاوب مع الشاشات الصغيرة */
-@media (max-width: 768px) {
-    .participant-box {
-        width: 80%;
-        margin: 10px 0; /* تقليل المسافة العمودية على الشاشات الصغيرة */
-    }
-
-    .btn {
-        width: 90%;
-        font-size: 1.2rem; /* تكبير الخط للأزرار على الشاشات الصغيرة */
-    }
-
-    .participants .btn-container {
-        padding: 10px; /* تقليل المساحة حول الأزرار */
-    }
-}
-
-/* استجابة التصميم */
-@media (max-width: 768px) {
-    .btn {
-        padding: 0.8rem 1.5rem; /* تقليل حجم الأزرار */
-        font-size: 0.9rem; /* تقليل حجم النص */
-    }
-
-    .participant-box {
-        padding: 1rem; /* تقليل المساحة في صناديق المشاركين */
-    }
-
-    .participant-box p {
-        font-size: 1rem; /* تقليل حجم النص */
-    }
-
-    .class-name {
-        font-size: 0.9rem; /* تقليل حجم النص */
-    }
-}
-
-@media (max-width: 480px) {
-    .btn {
-        padding: 0.5rem 1rem; /* تقليل حجم الأزرار أكثر */
-        font-size: 0.8rem; /* تقليل حجم النص أكثر */
-    }
-
-    .participant-box {
-        padding: 0.8rem; /* تقليل المساحة في صناديق المشاركين */
-    }
-
-    .participant-box p {
-        font-size: 0.9rem; /* تقليل حجم النص */
-    }
-
-    .class-name {
-        font-size: 0.8rem; /* تقليل حجم النص */
     }
 }
 
