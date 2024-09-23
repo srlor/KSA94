@@ -1,15 +1,19 @@
- document.addEventListener("DOMContentLoaded", function() {
-        const btn = document.querySelector(".btn");
-        const participantList = document.querySelector("#participantList");
+document.addEventListener("DOMContentLoaded", function() {
+    const btn = document.querySelector(".btn");
+    const participantList = document.querySelector("#participantList");
 
-        // إخفاء القائمة افتراضياً عند تحميل الصفحة
-        participantList.classList.add("hidden");
+    // إخفاء قائمة المشاركين افتراضياً
+    participantList.style.display = "none"; 
 
-        // إضافة وظيفة للزر لإظهار وإخفاء القائمة عند الضغط
-        btn.addEventListener("click", function() {
-            participantList.classList.toggle("hidden");
-        });
+    // إضافة وظيفة للزر لإظهار وإخفاء القائمة عند الضغط
+    btn.addEventListener("click", function() {
+        if (participantList.style.display === "none" || participantList.style.display === "") {
+            participantList.style.display = "flex"; // إظهار القائمة
+        } else {
+            participantList.style.display = "none"; // إخفاء القائمة
+        }
     });
+});
 
 // زر مشاركة الموقع
 document.getElementById('shareSite').addEventListener('click', function() {
