@@ -247,7 +247,3 @@ function backToResult() {
 
 
 
-window.onload = function() {
-    document.getElementById("loading").style.display = "none"; // إخفاء شاشة التحميل
-    document.getElementById("content").style.display = "block"; // إظهار المحتوى
-};
