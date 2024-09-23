@@ -469,7 +469,6 @@ h1:hover {
     }
 }
 
-
 /* قسم المشاركين كتذييل مع خلفية و ظلال */
 footer.participants {
     margin-top: 60px;
@@ -507,8 +506,8 @@ footer.participants {
 }
 
 /* إخفاء القائمة افتراضياً */
-.hidden {
-    display: none;
+#participantList {
+    display: none; /* إخفاء القائمة عند تحميل الصفحة */
 }
 
 /* صندوق المشاركين */
@@ -536,16 +535,19 @@ footer.participants {
     box-shadow: 0 6px 15px rgba(255, 255, 255, 0.5);
 }
 
-/* تنسيق مميز لفقرة مشاركة من ثالث ثانوي */
+/* تنسيق مميز لفقرة الفصل */
 .class-name {
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem; /* حجم أكبر */
+    font-weight: bold; /* جعل النص أكثر وضوحاً */
+    color: rgba(0, 0, 0, 0.7); /* لون أكثر وضوحًا */
     margin-top: 10px;
-    padding: 8px 12px;
+    padding: 10px 15px; /* توسيع الهوامش داخل الصندوق */
     border-radius: 10px;
-    background-color: rgba(0, 122, 51, 0.6);
+    background-color: rgba(0, 122, 51, 0.1); /* خلفية شفافة بنسبة قليلة */
     display: inline-block;
+    text-align: center;
+    width: 100%; /* جعلها تأخذ عرض الصفحة كاملاً */
+    max-width: 300px; /* وضع حد أقصى للعرض */
 }
 
 /* تحسين العرض باستخدام Flexbox */
@@ -556,6 +558,30 @@ footer.participants {
     margin-top: 15px;
     gap: 10px;
 }
+
+/* جعل التصميم متجاوب مع الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .participant-box {
+        width: 80%;
+        margin: 10px 0;
+    }
+
+    .btn {
+        width: 90%;
+        font-size: 1.2rem;
+    }
+
+    .participants .btn-container {
+        padding: 10px;
+    }
+
+    /* جعل الفصل يظهر بطريقة جيدة على الشاشات الصغيرة */
+    .class-name {
+        width: 90%;
+        font-size: 0.85rem; /* حجم مناسب للشاشات الصغيرة */
+        padding: 8px 12px; /* توسيع الهوامش قليلاً */
+    }
+    }
 
 /* جعل التصميم متجاوب مع الشاشات الصغيرة */
 @media (max-width: 768px) {
