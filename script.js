@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const btn = document.querySelector(".btn");
+    const btn = document.querySelector("#showParticipants");
     const participantList = document.querySelector("#participantList");
 
     // إخفاء قائمة المشاركين افتراضياً
