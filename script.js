@@ -244,3 +244,10 @@ function backToResult() {
     reviewSection.classList.add('hidden');
     resultSection.classList.remove('hidden');
 }
+
+
+
+window.onload = function() {
+    document.getElementById("loading").style.display = "none"; // إخفاء شاشة التحميل
+    document.getElementById("content").style.display = "block"; // إظهار المحتوى
+};
