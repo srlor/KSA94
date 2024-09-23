@@ -48,6 +48,13 @@ body {
 video {
     width: 100%; /* ملء العرض بالكامل */
     height: auto; /* الحفاظ على نسبة الأبعاد */
+    pointer-events: none; /* لتعطيل التحكم بالفيديو */
+}
+
+@keyframes pop {
+    to {
+        transform: scale(1); /* التحجيم عند العرض */
+    }
 }
 
 /* يمكنك إضافة أنماط أخرى هنا */
