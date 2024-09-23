@@ -472,41 +472,41 @@ h1:hover {
 
 /* قسم المشاركين كتذييل مع خلفية و ظلال */
 footer.participants {
-    margin-top: 60px; /* زيادة المسافة */
-    text-align: center; /* محاذاة النص في الوسط */
-    padding: 20px; /* إضافة مسافة داخلية */
-    background-color: transparent; /* خلفية شفافة */
-    width: 100%; /* تملأ عرض الصفحة */
+    margin-top: 60px;
+    text-align: center;
+    padding: 20px;
+    background-color: transparent;
+    width: 100%;
 }
 
 /* خلفية بيضاء أسفل الأزرار مع الظلال */
 .participants .btn-container {
-    background-color: white; /* خلفية بيضاء */
-    padding: 15px; /* تقليل المسافة */
-    border-radius: 15px; /* زوايا مدورة */
-    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1); /* ظل أعلى الخلفية */
-    display: inline-block; /* للحفاظ على احتواء الأزرار */
+    background-color: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+    display: inline-block;
 }
 
 /* الأزرار */
 .btn {
-    background-color: #27ae60; /* لون أخضر */
-    color: white; /* لون النص أبيض */
-    padding: 0.8rem 1.8rem; /* تقليل المسافة */
-    border: none; /* إزالة الحدود */
+    background-color: #27ae60;
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border: none;
     border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s; /* إضافة تأثير حركة */
-    margin: 8px; /* تقليل المسافة بين الأزرار */
-    font-size: 1rem; /* حجم النص */
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 8px;
+    font-size: 1rem;
 }
 
 .btn:hover {
-    background-color: #219150; /* لون الزر عند التمرير */
-    transform: scale(1.05); /* تكبير الزر عند التمرير */
+    background-color: #219150;
+    transform: scale(1.05);
 }
 
-/* إخفاء القائمة */
+/* إخفاء القائمة افتراضياً */
 .hidden {
     display: none;
 }
@@ -514,38 +514,38 @@ footer.participants {
 /* صندوق المشاركين */
 .participant-box {
     display: inline-block;
-    padding: 0.8rem 1.5rem; /* تقليل المسافة */
-    margin: 10px; /* تقليل المسافة */
-    border-radius: 15px; /* زوايا مدورة */
-    background-color: #007A33; /* لون موحد أخضر */
-    transition: transform 0.3s, box-shadow 0.3s; /* تأثير الحركة والظل */
-    text-align: center; /* توسيط النصوص */
-    min-width: 150px; /* تقليل عرض الصندوق لتجنب المساحات الزائدة */
+    padding: 0.8rem 1.5rem;
+    margin: 10px;
+    border-radius: 15px;
+    background-color: #007A33;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    min-width: 150px;
 }
 
 /* تنسيق مميز لأسماء المشاركين */
 .participant-box p {
-    font-size: 1rem; /* حجم النص المناسب */
-    font-weight: bold; /* جعل النص عريض */
-    color: white; /* لون النص أبيض */
-    margin: 0; /* إزالة المسافات الداخلية غير الضرورية */
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    margin: 0;
 }
 
 .participant-box:hover {
-    transform: translateY(-5px); /* تأثير حركة عند التمرير */
-    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.5); /* تأثير ظل مشع عند التمرير */
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.5);
 }
 
 /* تنسيق مميز لفقرة مشاركة من ثالث ثانوي */
 .class-name {
-    font-size: 0.9rem; /* حجم النص المناسب */
-    font-weight: bold; /* جعل النص عريض */
-    color: rgba(255, 255, 255, 0.8); /* لون أبيض شفاف */
-    margin-top: 10px; /* تقليل المسافة */
-    padding: 8px 12px; /* تقليل المساحة الداخلية */
-    border-radius: 10px; /* زوايا مدورة */
-    background-color: rgba(0, 122, 51, 0.6); /* خلفية خضراء شفافة متناسقة */
-    display: inline-block; /* جعل المربع متناسب مع المحتوى */
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 10px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    background-color: rgba(0, 122, 51, 0.6);
+    display: inline-block;
 }
 
 /* تحسين العرض باستخدام Flexbox */
@@ -554,7 +554,24 @@ footer.participants {
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 15px;
-    gap: 10px; /* تقليل المسافة بين الصناديق */
+    gap: 10px;
+}
+
+/* جعل التصميم متجاوب مع الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .participant-box {
+        width: 80%;
+        margin: 10px 0;
+    }
+
+    .btn {
+        width: 90%;
+        font-size: 1.2rem;
+    }
+
+    .participants .btn-container {
+        padding: 10px;
+    }
 }
 
 /* جعل التصميم متجاوب مع الشاشات الصغيرة */
