@@ -1,7 +1,15 @@
-document.getElementById('showParticipants').addEventListener('click', function() {
-    const participantList = document.getElementById('participantList');
-    participantList.classList.toggle('hidden');
-});
+ document.addEventListener("DOMContentLoaded", function() {
+        const btn = document.querySelector(".btn");
+        const participantList = document.querySelector("#participantList");
+
+        // إخفاء القائمة افتراضياً عند تحميل الصفحة
+        participantList.classList.add("hidden");
+
+        // إضافة وظيفة للزر لإظهار وإخفاء القائمة عند الضغط
+        btn.addEventListener("click", function() {
+            participantList.classList.toggle("hidden");
+        });
+    });
 
 // زر مشاركة الموقع
 document.getElementById('shareSite').addEventListener('click', function() {
