@@ -277,3 +277,24 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+// الحصول على عناصر النافذة المنبثقة وزر الإغلاق
+const popup = document.getElementById("popup");
+const close = document.getElementById("close");
+
+// عند النقر على زر الإغلاق أو أي مكان خارج الفيديو، يتم إغلاق النافذة المنبثقة
+close.onclick = function() {
+    popup.style.display = "none";
+};
+
+// عند النقر في أي مكان خارج محتوى النافذة المنبثقة يتم إغلاقها
+popup.onclick = function(event) {
+    // التأكد من أن النقر ليس داخل محتوى النافذة المنبثقة
+    if (event.target === popup) {
+        popup.style.display = "none";
+    }
+};
+
+// لعرض النافذة المنبثقة (يمكنك تشغيل هذا الكود عند الحاجة)
+function showPopup() {
+    popup.style.display = "flex";
+}
